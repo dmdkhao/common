@@ -19,8 +19,6 @@ public class GuavaTest {
         multimap.put(1,"s");
         multimap.put(1,"a");
         multimap.put(1,"s");
-        multimap.put(1,"d");
-        multimap.put(1,"r");
         log.info("{}", JSONObject.toJSONString(multimap));
         List<String> strings = multimap.get(1);
         log.info(strings.toString());
