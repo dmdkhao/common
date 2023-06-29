@@ -1,4 +1,4 @@
-package com.dmdk.common.controller.domain;
+package com.dmdk.common.domain;
 
 import lombok.Data;
 

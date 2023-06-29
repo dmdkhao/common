@@ -1,7 +1,7 @@
 package com.dmdk.common.controller;
 
-import com.dmdk.common.controller.domain.ConstTeamEntity;
-import com.dmdk.common.controller.repository.ConstNameRepository;
+import com.dmdk.common.domain.ConstTeamEntity;
+import com.dmdk.common.repository.ConstNameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
