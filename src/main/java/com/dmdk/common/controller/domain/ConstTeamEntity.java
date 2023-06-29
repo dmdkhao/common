@@ -7,10 +7,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "const_team")
-public class ConstTeamEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "JDBC")
-    private Long id;
+public final class ConstTeamEntity extends BaseSqlEntity{
 
     @Column(name = "company_id")
     private Long companyId;
@@ -39,7 +36,7 @@ public class ConstTeamEntity {
     @Override
     public String toString() {
         return "ConstTeamEntity{" +
-                "id=" + id +
+                "id=" + getId() +
                 ", companyId=" + companyId +
                 ", name='" + name + '\'' +
                 ", nameAcronym='" + nameAcronym + '\'' +
