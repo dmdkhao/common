@@ -10,6 +10,11 @@ public class Temp {
 
     public static void main(String[] args) throws Exception {
 
+        jsonTest();
+
+    }
+
+    private static void jsonTest() {
         String jsonString = "{\"type\":\"STRUCT\",\"specs\":[{\"id\":\"stringid\",\"name\":\"stringid\",\"dataType\":{\"type\":\"STRING\",\"max\":8892}},{\"id\":\"boolid\",\"name\":\"boolid\",\"dataType\":{\"type\":\"BOOL\",\"mapping\":{\"0\":\"jk\",\"1\":\"ol\"}}}]}";
         final JSONObject jsonObject = JSONObject.parseObject(jsonString);
         final JSONArray specs = jsonObject.getJSONArray("specs");
@@ -20,7 +25,6 @@ public class Temp {
         }
 
         System.out.println(jsonObject);
-
     }
 
     private static void paramBoolTest() {
