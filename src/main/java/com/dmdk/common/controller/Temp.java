@@ -30,6 +30,7 @@ public class Temp {
     private static void paramBoolTest() {
         String jsonString = "{\"type\":\"bool\",\"mapping\":{\"0\":\"关\",\"1\":\"开\"}}";
         final ParameterBool parameterBool = JSONObject.parseObject(jsonString, ParameterBool.class);
+        //masterdosomething
         System.out.println(parameterBool);
     }
 
