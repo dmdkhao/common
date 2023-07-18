@@ -1,5 +1,6 @@
 package com.dmdk.common.controller;
 
+import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.dmdk.common.dto.ParameterBool;
@@ -10,9 +11,10 @@ public class Temp {
 
     public static void main(String[] args) throws Exception {
 
-        //dosomething
-        //dosomething
-        //dosomething
+        for (int i = 0; i < 10; i++) {
+            long snowflakeNextId = IdUtil.getSnowflakeNextId();
+            System.out.println(snowflakeNextId);
+        }
 
     }
 
