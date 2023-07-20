@@ -74,10 +74,14 @@ public class MySnowflake {
         return 22;
     }
 
+    public MySnowflake() {
+        this(1L, 0L, 10, 12);
+    }
+
     // Example usage
     public static void main(String[] args) {
         MySnowflake idGenerator = new MySnowflake(1L, 0L, 10, 12);
         long id = idGenerator.generateId();
-        System.out.println("Generated ID: " + id);
+        System.out.println(id);
     }
 }
