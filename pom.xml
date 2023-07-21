@@ -76,6 +76,13 @@
             <version>5.8.15</version>
         </dependency>
 
+        <!-- 主键生成工具 -->
+        <dependency>
+            <groupId>com.github.yitter</groupId>
+            <artifactId>yitter-idgenerator</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+
     </dependencies>
 
     <build>

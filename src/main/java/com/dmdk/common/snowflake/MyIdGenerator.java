@@ -1,6 +1,7 @@
 package com.dmdk.common.snowflake;
 
 import cn.hutool.core.lang.Singleton;
+import com.dmdk.common.yitter.IdUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -35,11 +36,8 @@ public class MyIdGenerator {
         List<Long> idList = new ArrayList<>();
 //        for (int j = 0; j < 3; j++) {
 //            new Thread(()->{
-        for (int i = 0; i < 1 << 15; i++) {
-            Long id = MyIdGenerator.genId();
-//                    log.info(id.toString());
-//                    Long id = IdUtil.getSnowflakeNextId();
-//                    long l = id % 1_000_000_000_000_000L;
+        for (int i = 0; i < 1 << 14; i++) {
+            long id = IdUtil.genId();
             log.info(id + "");
             idList.add(id);
         }
