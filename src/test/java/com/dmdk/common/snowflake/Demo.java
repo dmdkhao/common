@@ -3,7 +3,10 @@ package com.dmdk.common.snowflake;
 import cn.hutool.core.util.IdUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +43,14 @@ public class Demo {
         }
 
     }
+    @Test
+    void testGenId3() {
+        for (int i = 0; i < 10; i++) {
+            long l = com.dmdk.common.yitter.IdUtil.genId();
+            log.info(l + "");
+        }
+
+    }
 
     @Test
     void distinct() {
@@ -51,6 +62,17 @@ public class Demo {
         log.info("list size ={}", idList.size());
         List<Long> collect = idList.stream().distinct().collect(Collectors.toList());
         log.info("distinct list size = {}", collect.size());
+    }
+
+    @Autowired
+    private RedissonClient redissonClient;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    @Test
+    void redisTest() {
+        redisTemplate.opsForValue().set("xxa", "dsaq");
     }
 
 
