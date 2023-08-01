@@ -1,6 +1,7 @@
 package com.dmdk.common.controller;
 
 import com.dmdk.common.domain.ConstTeamEntity;
+import com.dmdk.common.dto.TransportTypeEnum;
 import com.dmdk.common.repository.ConstNameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,5 +24,10 @@ public class ConstTeamController {
     @GetMapping("/all")
     public List<ConstTeamEntity> getAll() {
         return constNameRepository.findAll();
+    }
+
+    @GetMapping("/enumTest")
+    public Object enumTest() {
+        return TransportTypeEnum.MQTT;
     }
 }
