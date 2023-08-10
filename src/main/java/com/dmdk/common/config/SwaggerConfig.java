@@ -45,26 +45,15 @@ public class SwaggerConfig {
      *
      * @return Docket
      */
-    @Bean(value = "defaultApi2")
-    public Docket defaultApi2() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                //是否启用Swagger
-                .enable(true)
+    @Bean
+    public Docket commonApi() {
+        return new Docket(DocumentationType.OAS_30)
+                .groupName("commonApi")
                 .apiInfo(apiInfo())
                 .select()
-                //此包路径下的类，才生成接口文档
-                //.apis(RequestHandlerSelectors.basePackage("com.cn"))
-                //扫描所有
-                //.apis(RequestHandlerSelectors.any())
-                //加了ApiOperation注解的类，才生成接口文档
-                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.basePackage("com.dmdk.common.controller"))
                 .paths(PathSelectors.any())
                 .build();
-        //设置自定义swagger请求头
-//                .securitySchemes(Collections.singletonList(securityScheme()))
-//                .securityContexts(securityContexts());
-        //.globalOperationParameters(setHeaderToken());
     }
 
     /**
